@@ -8,4 +8,16 @@
 
 
 // DOCUMENT READY FUNCTION BELOW
+var userChoice =- "";
+var computerChoice = "";
+var winner = "";
+var randomNumber = 0;
+
+
+$("#shoot").click(function(){
+    var us = $("#input").val();
+   $("#userChoice").text(us);
+   randomNumber = Math.random();
+});
+
 
