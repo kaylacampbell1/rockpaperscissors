@@ -18,6 +18,7 @@ var computerWins = 0;
 
 
 $("#shoot").click(function(){
+    
     randomNumber = Math.floor(Math.random()*3) +1;
     if(randomNumber===1){
         computerChoice = "rock";
@@ -28,7 +29,8 @@ $("#shoot").click(function(){
     if(randomNumber===3){
         computerChoice = "scissor";
     }
-    userChoice = $("#input").val();
+    userChoice = $("#input").val().toLowerCase();
+    
     if (userChoice===computerChoice){
     $("#result").html("TIE!");
     }
