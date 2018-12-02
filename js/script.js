@@ -27,28 +27,41 @@ $("#shoot").click(function(){
         computerChoice = "paper";
     }
     if(randomNumber===3){
-        computerChoice = "scissor";
+        computerChoice = "scissors";
     }
     userChoice = $("#input").val().toLowerCase();
     
     if (userChoice===computerChoice){
-    $("#result").html("TIE!");
+        $("#result").html("TIE!");
     }
-    else if ((userChoice==="rock" && computerChoice==="scissor")||(userChoice==="paper"&&computerChoice==="rock")||(userChoice==="scissor"&&computerChoice==="paper")){
-    $("#result").html("You Win!");
-    userWins = userWins+1
+    else if ((userChoice==="rock" && computerChoice==="scissors")||(userChoice==="paper"&&computerChoice==="rock")||(userChoice==="scissors"&&computerChoice==="paper")){
+        winner = "You Win!"
+        $("#result").html(winner);
+    userWins = userWins+1;
     }
-    else if ((computerChoice==="rock" && userChoice==="scissor")||(computerChoice==="paper"&&userChoice==="rock")||(computerChoice==="scissor"&&userChoice==="paper")){
-    $("#result").html("Computer Win!");
-    computerWins = computerWins+1
+    else if ((computerChoice==="rock" && userChoice==="scissors")||(computerChoice==="paper"&&userChoice==="rock")||(computerChoice==="scissors"&&userChoice==="paper")){
+        winner = "Computer Win!"
+        $("#result").html(winner);
+    computerWins = computerWins+1;
+    }
+    else if (userChoice==="scissor"){
+            $("#result").html("Add a 's' to the end of 'scissor'");
     }
     else{
-        $("#result").html("Your input is not valid. Please enter: 'rock', 'paper' or 'scissor'");
+        $("#result").html("Your input "+userChoice+ " is not valid. Please enter: 'rock', 'paper' or 'scissors'");
     }
    $("#userChoice").html(userChoice);
    $("#computerChoice").html(computerChoice);
    $("#userWins").html(userWins);
    $("#computerWins").html(computerWins);
+   while(userWins>computerWins){
+       $("#userWins").css("color", "blue")
+       $("#uw").css("color", "blue")
+   }
+   while(computerWins>userWins){
+       $("#computerWins").css("color", "blue")
+       $("#cw").css("color", "blue")
+   }
 });
 
 
